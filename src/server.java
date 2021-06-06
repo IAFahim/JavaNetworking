@@ -10,8 +10,9 @@ public class server {
             it would make sure it closes properly. And for this reason we have put all the resources in try-with-resources
         */
         try (ServerSocket serverSocket = new ServerSocket(9806)) {
-
-            /* ServerSocket accept methods returns an Socket connected to the client */
+            /*
+                ServerSocket accept methods returns an Socket connected to the client
+            */
             try (Socket socket = serverSocket.accept()) {
                 /*
                     Socket getInputStream of bit(s) so we Want to put it in a InputStreamReader
