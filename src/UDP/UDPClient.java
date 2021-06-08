@@ -12,7 +12,6 @@ public class UDPClient {
     private InetAddress IPADDRESS;
     private DatagramSocket datagramSocket;
 
-
     public boolean connect(String connectionString) {
         byte[] buffer = connectionString.getBytes();
         DatagramPacket datagramPacket = new DatagramPacket(buffer, buffer.length, IPADDRESS, PORT);
@@ -22,11 +21,11 @@ public class UDPClient {
     public boolean send(DatagramPacket datagramPacket) {
         try {
             datagramSocket.send(datagramPacket);
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
             return false;
         }
-        return true;
+        return false;
     }
 
     public UDPClient(String ipAddress, int port, int packageSize) throws UnknownHostException {
@@ -39,7 +38,6 @@ public class UDPClient {
             e.printStackTrace();
         }
     }
-
 
     public static void main(String[] args) {
 
