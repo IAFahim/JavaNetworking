@@ -1,6 +1,5 @@
 package UDP;
 
-import javax.sound.sampled.Port;
 import java.io.*;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
@@ -8,8 +7,8 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class UDPClient {
-    private int PORT, packageSize;
-    private InetAddress IPADDRESS;
+    private final int PORT, packageSize;
+    private final InetAddress IPADDRESS;
     private DatagramSocket datagramSocket;
 
     public boolean connect(String connectionString) {
